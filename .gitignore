@@ -1,0 +1,105 @@
+# Python
+__pycache__/
+.ropeproject/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+*.log
+*.pkl
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.webp
+
+# ChromaDB data
+chromadb_data/
+chroma.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Screenshots
+chapter_screenshot.png
+screenshots/
+
+# Config files with sensitive data
+config.json
+local_config.py
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Machine learning models
+*.model
+*.joblib
+rl_scoring_model.pkl
+models/
+
+# Documentation build
+docs/_build/
+
+# PyCharm
+.idea/
