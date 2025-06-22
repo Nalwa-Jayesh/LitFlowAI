@@ -1,6 +1,6 @@
-# AI Publishing System - Enhanced Version
+# LitFlowAI - Enhanced AI Publishing System
 
-An intelligent content processing system that fetches, processes, and refines web content through AI agents and human-in-the-loop workflows with reinforcement learning capabilities.
+An intelligent content processing system that fetches, processes, and refines web content through AI agents and human-in-the-loop workflows with reinforcement learning and robust version control.
 
 ## 🚀 Features
 
@@ -8,15 +8,18 @@ An intelligent content processing system that fetches, processes, and refines we
 - 🤖 **AI Processing**: Multi-agent system (Writer, Reviewer, Editor) powered by Google Gemini
 - 👥 **Enhanced Human-in-the-Loop**: Multi-iteration review with 5 interaction modes
 - 🧠 **Smart Retrieval**: RL-enhanced content search and ranking with ChromaDB
-- 💾 **Advanced Version Control**: Comprehensive content versioning with metadata
+- 💾 **Advanced Version Control**: Manage, activate, and delete multiple content versions
 - 📊 **Feedback Learning**: Reinforcement learning from user interactions
 
 ## 🛠️ Quick Setup
 
 ### 1. Install Dependencies
 ```bash
+# Clone the repository
+git clone https://github.com/Nalwa-Jayesh/LitFlowAI
+
 # Navigate to project directory
-cd ai_pub-proto
+cd LitFlowAI
 
 # Activate virtual environment (if using one)
 .\.venv\Scripts\activate  # Windows
@@ -46,20 +49,34 @@ python test_system.py
 
 ## 📖 Usage
 
-### Basic Processing
+### Process a Chapter
 ```bash
-# Process a chapter with default settings (3 iterations max)
 python main.py --mode process --url "https://en.wikisource.org/wiki/The_Gates_of_Morning/Book_1/Chapter_1"
-
-# Process with custom iteration limit
-python main.py --mode process --url "https://example.com/content" --iterations 5
 ```
 
 ### Search Stored Content
 ```bash
-# Search previously processed content
-python main.py --mode search --query "gates of morning chapter"
+python main.py --mode search --query "character analysis of Dick"
 ```
+
+### Version Control & Management
+
+#### List All Versions for a Chapter
+```bash
+python main.py --mode manage --action list --url "https://en.wikisource.org/wiki/The_Gates_of_Morning/Book_1/Chapter_1"
+```
+
+#### Delete a Specific Version
+```bash
+python main.py --mode manage --action delete --id "your-version-id"
+```
+
+#### Activate a Specific Version
+```bash
+python main.py --mode manage --action activate --id "your-version-id"
+```
+
+---
 
 ## 🎛️ Human-in-the-Loop Options
 
@@ -122,8 +139,8 @@ ai_pub-proto/
 │   └── human_loop.py   # Enhanced multi-iteration review
 ├── scraper/           # Web content fetching
 │   └── fetcher.py     # Playwright-based scraper
-├── storage/           # Data persistence
-│   └── chromadb_handler.py  # Enhanced RL-based storage
+├── storage/           # Data persistence & version control
+│   └── chromadb_handler.py  # RL-based storage & versioning
 ├── utils/             # Utilities
 │   ├── gemini_api.py  # Gemini API integration
 │   └── prompts.py     # Enhanced AI prompts
@@ -182,6 +199,20 @@ from storage.chromadb_handler import submit_feedback
 
 # Provide feedback for learning
 submit_feedback("search query", "result content", reward=0.8)  # Scale: -1 to 1
+```
+
+### Version Management (Python API)
+```python
+from storage.chromadb_handler import list_versions_for_url, delete_version_by_id, set_active_version
+
+# List all versions for a URL
+versions = list_versions_for_url("https://en.wikisource.org/wiki/The_Gates_of_Morning/Book_1/Chapter_1")
+
+# Delete a version by ID
+delete_version_by_id("your-version-id")
+
+# Activate a specific version
+set_active_version("your-version-id")
 ```
 
 ## 🧪 Testing
@@ -265,7 +296,7 @@ python main.py --mode process --url "..." --debug
 
 3. **Human Review**: Interactive multi-iteration refinement
 
-4. **Final Storage**: Processed content saved with metadata
+4. **Final Storage**: Processed content saved with metadata and versioning
 
 5. **Future Retrieval**: 
    ```bash
@@ -276,7 +307,7 @@ python main.py --mode process --url "..." --debug
 
 ## 🤝 Contributing
 
-Feel free to enhance the system by:
+Feel free to enhance LitFlowAI by:
 - Adding new AI agents
 - Improving prompt engineering
 - Implementing advanced RL algorithms
@@ -285,4 +316,4 @@ Feel free to enhance the system by:
 
 ---
 
-**Happy Publishing!** 🚀📚✨
+**Happy Publishing with LitFlowAI!** 🚀📚✨
