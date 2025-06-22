@@ -95,7 +95,7 @@ During the review process, you have 5 options:
 
 📚 VERSION COMPARISON:
 - ORIGINAL: 1,234 chars | 185 words
-- AI_SPUN: 1,189 chars | 178 words  
+- AI_SPUN: 1,189 chars | 178 words
 - AI_REVIEWED: 1,245 chars | 188 words
 - AI_EDITED: 1,203 chars | 181 words (🔄 CURRENT)
 
@@ -117,7 +117,7 @@ The system learns from your feedback to improve search results:
 ### Rating System
 When searching, rate results 1-5:
 - 1 = Very Poor
-- 2 = Poor  
+- 2 = Poor
 - 3 = Average
 - 4 = Good
 - 5 = Excellent
@@ -130,7 +130,7 @@ When searching, rate results 1-5:
 ## 📁 Project Structure
 
 ```
-ai_pub-proto/
+LitFlowAI/
 ├── ai_agents/           # AI processing agents
 │   ├── writer.py       # Content rewriting
 │   ├── reviewer.py     # Content review
@@ -298,7 +298,7 @@ python main.py --mode process --url "..." --debug
 
 4. **Final Storage**: Processed content saved with metadata and versioning
 
-5. **Future Retrieval**: 
+5. **Future Retrieval**:
    ```bash
    python main.py --mode search --query "chapter1 content"
    ```
